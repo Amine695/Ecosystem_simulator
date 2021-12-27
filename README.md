@@ -89,5 +89,5 @@ Celui-ci est généré grâce à [pbPlots](https://github.com/InductiveComputerS
 
 
 ## Auteur
-Amine Berbagui
+Amine Berbagui <br/>
 Ghassen Hachani
