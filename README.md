@@ -10,7 +10,7 @@ Pour l'installer, rien de plus simple :
 ```bash
 sudo apt-get install libsfml-dev
 ```
-Si vous utiliser un autre système d'exploitation cd la documentation [ici](https://www.sfml-dev.org/tutorials/2.5/index-fr.php).
+Si vous utiliser un autre système d'exploitation cf la documentation [ici](https://www.sfml-dev.org/tutorials/2.5/index-fr.php).
 
 ## Compilation et lancement du jeu
 Pour compiler notre jeu, utiliser la commande **make** puis lancer l'exécutable *game* :
