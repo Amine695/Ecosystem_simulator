@@ -73,6 +73,7 @@ Celui-ci est généré grâce à [pbPlots](https://github.com/InductiveComputerS
 ![Graph](img/results.png)
 
 ## Fonctionnalités de notre application
+- [x] Créer la fenêtre de lancement
 - [x] Créer la fenêtre de simulation
 - [x] Définir les classes pour les animaux
 - [x] Gérer le déplacement des animaux
@@ -80,9 +81,11 @@ Celui-ci est généré grâce à [pbPlots](https://github.com/InductiveComputerS
 - [x] Gérer les interactions entre les entités
 - [x] Ajouter sur la fenêtre les statistiques de la simulation
 - [x] Gérer la customisation de la simulation
+- [x] Utilisation de tests unitaires
 - [x] Pouvoir faire pause, accélérer, ralentir la simulation
 - [x] Pouvoir générer un graphe de la simulation avec le nombre d'animaux en fonction du temps
 - [x] Gérer la partie audio du jeu avec les différents sons
+- [x] Respecter les contraintes du projet (fonctions virtuelles, héritage,...)
 
 ## Diagramme UML
 ![UML](UML/UML.png)
