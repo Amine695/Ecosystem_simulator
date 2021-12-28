@@ -1,5 +1,4 @@
-# Game of Life simulator
-
+![Title game](img/titlegame.gif)
 Ce jeu est une simulation en C++ d'un écosystème simple, où des moutons et des loups évoluent.
 
 
