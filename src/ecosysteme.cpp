@@ -16,6 +16,12 @@ void Ecosystem::initTextGame()
         std::cerr << "Erreur, impossible de charger " << POLICE << std::endl;
         exit(EXIT_FAILURE);
     }
+    play.setFont(font);
+    play.setCharacterSize(50);
+    play.setFillColor(COULEUR_TXT_PLAY);
+    play.setString("Press ENTER to start !");
+    play.setPosition(650,400);
+
     // initialisation texte pour les statistiques
     sheepText.setFont(font);
     sheepText.setCharacterSize(TAILLE_POLICE);
@@ -151,6 +157,7 @@ void Ecosystem::redraw()
     sf::Sprite s5(bgGame);
 	s5.setScale(3,3);
     window.draw(s5);
+    window.draw(play);
     if(!finished)
     {
         window.draw(sheeps);
@@ -256,9 +263,15 @@ void Ecosystem::runGame()
     window.create(sf::VideoMode(LARGEUR_FENETRE, HAUTEUR_FENETRE), FENETRE_JEU);
     window.setFramerateLimit(FREQUENCE_RAFRAICHISSEMENT_IMG);
     inGameMusic();
+    // durée pour controler la vitesse d'animation
+    int currentColor = 1;
+    float duration = float();
+
     while(window.isOpen())
     {
         sf::Event event;
+        sf::Time dt = clock1.restart();
+        duration += dt.asSeconds();
         while(window.pollEvent(event))
         {
             switch(event.type)
@@ -274,7 +287,9 @@ void Ecosystem::runGame()
                     {
                         //start
                         case sf::Keyboard::Enter:
-                            if(finished){
+                            if(finished)
+                            {
+                                play.setScale(0,0);//on enleve le texte
                                 restart();
                             }
                             break;
@@ -303,6 +318,16 @@ void Ecosystem::runGame()
                     break;
             }
         }
+        if(duration > 0.01f)
+        {
+            duration = 0;
+            if(currentColor < 200)
+                currentColor += 5;
+            else
+                currentColor = 0;
+            play.setFillColor(sf::Color(0,currentColor,0));
+        }
+
         if(!paused && !finished)
         {
             update();

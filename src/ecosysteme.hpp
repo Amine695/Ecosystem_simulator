@@ -17,9 +17,9 @@ class Ecosystem : public Music
     private:
         sf::RenderWindow window;
         sf::Font font,font1,font2;
-        sf::Text txt1,txt2,sheepText,WolfText,statText,commandText;
+        sf::Text txt1,txt2,play,sheepText,WolfText,statText,commandText;
         sf::Texture bgGame,bgMenu,button;
-        sf::Clock clock;
+        sf::Clock clock,clock1;
         Animals<Sheep> sheeps;
         Animals<Wolf> wolves;
         Foods foods;
