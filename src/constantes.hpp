@@ -51,6 +51,7 @@ const unsigned int RAYON_FOOD = 6;
 // PARAMETRES COULEURS
 const sf::Color COULEUR_TXT_MENU(211, 146, 213);
 const sf::Color COULEUR_TEXT = sf::Color::Black;
+const sf::Color COULEUR_TXT_PLAY(172,241,22);
 const sf::Color COULEUR_ANIMAL = sf::Color::Black;
 const sf::Color COULEUR_SHEEP(249, 148, 13,220);
 const sf::Color COULEUR_WOLF(13, 30,249,180);
