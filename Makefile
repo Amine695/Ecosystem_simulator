@@ -1,6 +1,6 @@
 ﻿CC=g++
 CCFLAGS=-Wall -Werror -std=c++11 -g
-LIBFLAGS=-lsfml-graphics -lsfml-window -lsfml-system -lm
+LIBFLAGS=-lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lm
 SRC_DIR=src
 SRC=$(wildcard $(SRC_DIR)/pbPlots/*.cpp) $(wildcard $(SRC_DIR)/*.cpp)
 OBJ=$(SRC:.cpp=.o)
