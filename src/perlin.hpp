@@ -2,7 +2,7 @@
 
 /*
 Ce header va permettre d'implémenter le bruit d'interpolation de Perlin en 1D (cf Rapport)
-Le but étant d'avoir un meilleur effet visuel de notre jeu.
+Le but étant de déplacer les animaux d'une manière naturelle
 Pour plus de détail : https://fr.wikipedia.org/wiki/Bruit_de_Perlin#Interpolation
 */
 
