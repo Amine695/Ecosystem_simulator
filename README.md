@@ -12,7 +12,7 @@ sudo apt-get install libsfml-dev
 Si vous utiliser un autre système d'exploitation cf la documentation [ici](https://www.sfml-dev.org/tutorials/2.5/index-fr.php).
 
 ## Compilation et lancement du jeu
-Pour compiler notre jeu, utiliser la commande **make** puis lancer l'exécutable *game* :
+Pour compiler notre jeu, utiliser la commande **make** puis lancer l'exécutable *game* avec la commande:
 ```bash
 ./game
 ```
@@ -38,7 +38,7 @@ Voici les commandes de l'application :
 
 - En petit cercle blanc sont représentés la nourriture.
 
-- À chaque régénération de la fenêtre , les animaux se déplacent pseudo-aléatoirement en utilisant le bruit de Perlin (*Perlin noise*. Leurs points de vie diminuent d'un point par déplacement.
+- À chaque régénération de la fenêtre , les animaux se déplacent pseudo-aléatoirement en utilisant le bruit de Perlin (*Perlin noise*). Leurs points de vie diminuent d'un point par déplacement.
 
 - Deux entités interagissent entre elles lorsque les cercles qui les représentent se superposent. Voici les interactions entre les entités :
 
@@ -49,7 +49,7 @@ Voici les commandes de l'application :
     * **Quand un animal n'a plus de points de vie**, il meurt et disparaît de la fenêtre.
 
 ## Personnalisation
-Evidemment, vous pouvez faire varier les paramètres de la simulation comme bon vous semble ! Elles se situent dans le fichier **constants.hpp** du dossier *src*.
+Evidemment, vous pouvez faire varier les paramètres de la simulation comme bon vous semble ! Elles se situent dans le fichier **constants.hpp** du dossier `src`.
 
 ## Statistiques
 
@@ -71,6 +71,10 @@ Celui-ci est généré grâce à [pbPlots](https://github.com/InductiveComputerS
 
 ![Graph](img/results.png)
 
+## Tests
+Pour vérifier le bon fonctionnement de nos classes, nous avons effectuer plusieurs tests à l'aide de la librairie **catch** que vous pourrez retrouver [ici](https://github.com/Amine695/Game-of-Life-/blob/main/tests/Testcase.cpp).
+Pour compiler, utiliser la commande `make testcase` dans le répertoire principale puis `./testcase`.
+
 ## Fonctionnalités de notre application
 - [x] Créer la fenêtre de lancement
 - [x] Créer la fenêtre de simulation
@@ -90,6 +94,6 @@ Celui-ci est généré grâce à [pbPlots](https://github.com/InductiveComputerS
 ![UML](UML/UML.png)
 
 
-## Auteur
-Amine Berbagui <br/>
-Ghassen Hachani
+## Auteurs
+**Amine Berbagui** <br/>
+**Ghassen Hachani**
