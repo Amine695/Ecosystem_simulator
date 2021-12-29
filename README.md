@@ -42,7 +42,7 @@ Voici les commandes de l'application :
 
 - Deux entités interagissent entre elles lorsque les cercles qui les représentent se superposent. Voici les interactions entre les entités :
 
-    * **Quand un mouton rencontre de la nourriture**, le mouton mange la nourriture. La nourriture est régénérée à un autre endroit de la fenêtre et le lapin régénère ses points de vie à la valeur de départ.
+    * **Quand un mouton rencontre de la nourriture**, le mouton mange la nourriture. La nourriture est régénérée à un autre endroit de la fenêtre et le mouton régénère ses points de vie à la valeur de départ.
     * **Quand un loup rencontre un mouton**, le loup mange le mouton. Le loup régénère ses points de vie, et le mouton disparaît.
     * **Quand un mouton rencontre un autre mouton**, un nouveau mouton naît avec une certaine probabilité (définie à `0.3`).
     * **Quand un loup rencontre un autre loup**, un nouveau loup naît avec une certaine probabilité (définie à `0.3`).
@@ -52,7 +52,6 @@ Voici les commandes de l'application :
 Evidemment, vous pouvez faire varier les paramètres de la simulation comme bon vous semble ! Elles se situent dans le fichier **constants.hpp** du dossier `src`.
 
 ## Statistiques
-
 Vous pouvez voir les statistiques de la simulation en haut à gauche de la fenêtre :
 
 - Le temps en secondes
@@ -60,13 +59,15 @@ Vous pouvez voir les statistiques de la simulation en haut à gauche de la fenê
 - Le nombre actuel de moutons
 - La nombre actuel de loups
 - Le nombre total de nourritures mangées par les moutons
-- Le nombre total de lapins tués par les loups
+- Le nombre total de moutons tués par les loups
 - Le nombre de moutons nés
 - Le nombre de loups nés
 
 Le mot `Paused` s'affiche si la simulation est sur pause.
 
-À la fin de la simulation, un graphique apparaît montrant l'évolution du nombre de lapins et de renards en fonction du temps.
+## Résultat de la simulation
+
+À la fin de la simulation, un graphique apparaît montrant l'évolution du nombre de loups et de moutons en fonction du temps.
 Celui-ci est généré grâce à [pbPlots](https://github.com/InductiveComputerScience/pbPlots).
 
 ![Graph](img/results.png)
