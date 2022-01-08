@@ -21,8 +21,6 @@ Pour compiler notre jeu, utiliser la commande **make** puis lancer l'exécutable
 Une fenêtre de lancement apparait avec une musique immersif qui l'on espére vous plaira ainsi qu'un bouton **START**. Une fois le bouton appuyé, la fenêtre du jeu s'ouvre et la simulation démarre en appuyant sur la touche 'Enter'.
 
 
-[comment]: <> (![Game Of Life](img/simu.png)
-
 ## Commandes
 
 Voici les commandes de l'application :
