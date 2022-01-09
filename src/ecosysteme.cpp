@@ -1,9 +1,12 @@
 ﻿#include <iostream>
 #include <string>
 #include <sstream>
+#include <fstream>
+#include <filesystem>
 #include "ecosysteme.hpp"
 #include "constantes.hpp"
-#include "plot.hpp"
+namespace fs = std::filesystem;
+using std::filesystem::current_path;
 
 /*
 Initialisation du texte du Jeu
@@ -56,14 +59,19 @@ void Ecosystem::initTextMenu()
     button.loadFromFile(BUTTON_IMG);
     txt1.setFont(font2);
     txt2.setFont(font1);
-    txt1.setString("GAME OF LIFE");
-    txt2.setString(L"          Wolf vs Sheep\nWhich specie will survive ?");
-    txt1.setFillColor(sf::Color::Magenta);
+    txt3.setFont(font2);
+    txt1.setString("GAME O");
+    txt3.setString("F LIFE");
+    txt2.setString(L"          Sheep vs Wolf \nWhich specie will survive ?");
+    txt1.setFillColor(sf::Color::Black);
     txt2.setFillColor(sf::Color::Black);
+    txt3.setFillColor(sf::Color::White);
     txt1.setCharacterSize(60);
     txt2.setCharacterSize(40);
-    txt1.setPosition(470,10);
-    txt2.setPosition(430,90);
+    txt3.setCharacterSize(60);
+    txt1.setPosition(550,10);
+    txt2.setPosition(590,150);
+    txt3.setPosition(820,10);
 
 }
 
@@ -75,8 +83,7 @@ Ecosystem::Ecosystem():
     timeSpeed(1.0f),
     paused(false),
     finished(true),
-    showStats(true),
-    showPlot(false)
+    showStats(true)
 {
     initTextGame();
     sheeps.init(NB_SHEEPS_DEBUT);
@@ -101,8 +108,6 @@ void Ecosystem::update()
     wolves.update(*sheeps.getList(),timeSpeed);
     // Update timer
     timer += clock.getElapsedTime().asSeconds() * timeSpeed;
-    // Update plot
-    plot.update(timer, sheeps.getNb(), wolves.getNb());
 }
 
 
@@ -138,11 +143,10 @@ void Ecosystem::drawStats()
 void Ecosystem::drawCommands()
 {
     std::stringstream ss;
-    ss << "Enter: start\n"
-        << "P: pause\n"
-        << "Right arrow: Speed x2\n"
+    ss  << "Right arrow: Speed x2\n"
         << "Left arrow: Speed x0.5\n"
-        << "S: show/hide statistics\n";
+        << "S: show/hide statistics\n"
+        << " P: pause\n";
     commandText.setString(ss.str());
     window.draw(commandText);
 }
@@ -155,7 +159,7 @@ void Ecosystem::redraw()
 {
     bgGame.loadFromFile(BACKGROUNG_IMG);
     sf::Sprite s5(bgGame);
-	s5.setScale(3,3);
+	s5.setScale(1,1.5);
     window.draw(s5);
     window.draw(play);
     if(!finished)
@@ -164,8 +168,6 @@ void Ecosystem::redraw()
         window.draw(wolves);
         window.draw(foods);
     }
-    if(showPlot)
-        window.draw(plot);
     if(showStats)
         drawStats();  
 
@@ -181,7 +183,6 @@ void Ecosystem::restart()
     sheeps.init(NB_SHEEPS_DEBUT);
     wolves.init(NB_WOLVES_DEBUT);
     foods.init(NB_FOODS);
-    plot.reset();
     finished = false;
     showStats = true;
 }
@@ -236,7 +237,7 @@ void Ecosystem::runMenu()
 			}
 		}
 		
-		s1.setPosition(550,700);
+		s1.setPosition(690,620);
 		s1.setScale(0.5,0.5);
         
         window.draw(s2);
@@ -244,6 +245,7 @@ void Ecosystem::runMenu()
 
 		window.draw(txt1);
 		window.draw(txt2);
+        window.draw(txt3);
 		
 		window.display();
     }
@@ -251,6 +253,18 @@ void Ecosystem::runMenu()
 }
 
 
+
+/**
+ * Fonction qui exécute le script python permettant de ploter nos résultats avec matplotlib
+ * Save le plot sous format png dans le dossier plot
+*/
+void Ecosystem::savetoPNG()
+{
+    std::string command = "python3 ";
+    command += current_path();
+    command += "/python/plot.py";
+    system(command.c_str());
+}
 
 
 
@@ -266,6 +280,7 @@ void Ecosystem::runGame()
     // durée pour controler la vitesse d'animation
     int currentColor = 1;
     float duration = float();
+    std::ofstream file("data/data.txt"); 
 
     while(window.isOpen())
     {
@@ -331,12 +346,17 @@ void Ecosystem::runGame()
         if(!paused && !finished)
         {
             update();
+            file<< timer <<"\n"
+                << sheeps.getNb() << "\n"
+                << wolves.getNb() << "\n";
+
             if(sheeps.empty() && wolves.empty())
             {
                 GameSound.stop();
                 finished = true;
-                plot.savePNG();
-                showPlot = true;
+                file.close();
+                savetoPNG();
+                
             }
 
         }
