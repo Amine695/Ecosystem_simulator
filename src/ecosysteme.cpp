@@ -59,19 +59,14 @@ void Ecosystem::initTextMenu()
     button.loadFromFile(BUTTON_IMG);
     txt1.setFont(font2);
     txt2.setFont(font1);
-    txt3.setFont(font2);
-    txt1.setString("GAME O");
-    txt3.setString("F LIFE");
-    txt2.setString(L"          Sheep vs Wolf \nWhich specie will survive ?");
+    txt1.setString("GAME OF LIFE");
+    txt2.setString(L"          Sheep vs Wolf \nWhich species will survive ?");
     txt1.setFillColor(sf::Color::Black);
     txt2.setFillColor(sf::Color::Black);
-    txt3.setFillColor(sf::Color::White);
     txt1.setCharacterSize(60);
     txt2.setCharacterSize(40);
-    txt3.setCharacterSize(60);
     txt1.setPosition(550,10);
     txt2.setPosition(590,150);
-    txt3.setPosition(820,10);
 
 }
 
@@ -245,7 +240,6 @@ void Ecosystem::runMenu()
 
 		window.draw(txt1);
 		window.draw(txt2);
-        window.draw(txt3);
 		
 		window.display();
     }
