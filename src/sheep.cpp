@@ -7,6 +7,7 @@ Sheep::Sheep()
 {
     this->setRadius(RAYON_SHEEP);
     this->setFillColor(COULEUR_SHEEP);
+    this->setPointCount(3);
 }
 
 //destructeur

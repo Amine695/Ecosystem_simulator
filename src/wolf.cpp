@@ -8,6 +8,7 @@ Wolf::Wolf()
 {
     this->setRadius(RAYON_WOLF);
     this->setFillColor(COULEUR_WOLF);
+    this->setPointCount(4);
 }
 
 //destructeur
