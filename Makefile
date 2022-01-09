@@ -1,8 +1,8 @@
 ﻿CC=g++
-CCFLAGS=-Wall -Werror -std=c++11 -g
+CCFLAGS=-Wall -Werror -std=c++17 -g
 LIBFLAGS=-lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lm
 SRC_DIR=src
-SRC=$(wildcard $(SRC_DIR)/pbPlots/*.cpp) $(wildcard $(SRC_DIR)/*.cpp)
+SRC= $(wildcard $(SRC_DIR)/*.cpp)
 OBJ=$(SRC:.cpp=.o)
 TST_DIR=tests
 TST=$(wildcard $(TST_DIR)/*.cpp)
@@ -17,13 +17,10 @@ testcase:
 
 
 $(EXEC): $(OBJ)
-	$(CC) $^ $(LIBFLAGS) -o $@
-
-$(SRC_DIR)/pbPlots/%.o: $(SRC_DIR)/pbPlots/%.cpp
-	$(CC) -c $< -o $@
+	$(CC)  $^ $(LIBFLAGS)  -o $@
 
 %.o: %.cpp
-	$(CC) $(CCFLAGS) -c $< -o $@
+	$(CC)  $(CCFLAGS)   -c $< -o  $@
 
 .depend: $(SRC)
 	$(CC) $(CCFLAGS) -MM $(SRC) > .depend
@@ -31,7 +28,7 @@ $(SRC_DIR)/pbPlots/%.o: $(SRC_DIR)/pbPlots/%.cpp
 -include .depend
 
 clean:
-	rm -f $(OBJ) $(EXEC) .depend plot/resultat.png
+	rm -f $(OBJ) $(EXEC) .depend plot/resultat.png  data/data.txt
 
 cleantest:
 	cd $(TST_DIR) ; make clean
