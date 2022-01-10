@@ -65,7 +65,7 @@ void Ecosystem::initTextMenu()
     txt2.setFont(font1);
     txt1.setString("GAME OF LIFE");
     txt2.setString(L"          Sheep vs Wolf \nWhich species will survive ?");
-    txt1.setFillColor(sf::Color::Black);
+    txt1.setFillColor(sf::Color(243,222,170));
     txt2.setFillColor(sf::Color::Black);
     txt1.setCharacterSize(60);
     txt2.setCharacterSize(40);
@@ -258,12 +258,12 @@ void Ecosystem::runMenu()
 */
 void Ecosystem::savetoPNG()
 {
-    char buff[FILENAME_MAX]; //create string buffer to hold path
+    char buff[FILENAME_MAX]; //buffer contenant le path
     GetCurrentDir( buff, FILENAME_MAX );
     std::string current_working_dir(buff);
     std::string command = "python3 ";
     command +=  current_working_dir;
-    command += "/../python/plot.py";
+    command += "/python/plot.py";
     system(command.c_str());
 }
 
