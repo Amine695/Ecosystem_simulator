@@ -28,7 +28,7 @@ $(EXEC): $(OBJ)
 -include .depend
 
 clean:
-	rm -f $(OBJ) $(EXEC) .depend plot/resultat.png  data/data.txt
+	rm -f $(OBJ) $(EXEC) .depend plot/result.png  
 
 cleantest:
 	cd $(TST_DIR) ; make clean
