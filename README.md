@@ -21,17 +21,17 @@ Pour compiler notre jeu, utiliser la commande **make** directement depuis le dos
 
 ATTENTION ! La compilation nécessite d’avoir la version standard **C++17**. Si vous êtes sous **C++11**, il vous faudra changer les paramètres de compilation g++ dans votre IDE. Si vous ne posséder pas cette version, il vous faudra l'installer. <br/>
 
-- Sous windows : suivre ce [tutoriel](https://www.geeksforgeeks.org/complete-guide-to-install-c17-in-windows/) en installant la dernière version de [MinGW](https://nuwen.net/mingw.html)
-- Sous Linux : suivre ce [tutoriel](https://ducciogasparri.it/2020/07/30/installing-c17-and-c20-on-ubuntu-and-amazon-linux/)
+- Sous windows : suivre ce [tutoriel](https://www.geeksforgeeks.org/complete-guide-to-install-c17-in-windows/) en installant la dernière version de [MinGW](https://nuwen.net/mingw.html).
+- Sous Linux : suivre ce [tutoriel](https://ducciogasparri.it/2020/07/30/installing-c17-and-c20-on-ubuntu-and-amazon-linux/) complet.
 
 ## Lancement
 
 Une fenêtre de lancement apparait avec une musique immersif qui l'on espére vous plaira ainsi qu'un bouton **START**.
-![Lancement](img/Capture.jpg)
+![Lancement](img/Capture.JPG)
 
 Une fois le bouton appuyé, la fenêtre du jeu s'ouvre et la simulation démarre en appuyant sur la touche 'Enter'.
 
-![Simulation](img/game.jpg)
+![Simulation](img/game.JPG)
 
 ## Commandes
 
@@ -78,7 +78,7 @@ Le mot `Pause` s'affiche si la simulation est sur pause.
 ## Résultat de la simulation
 
 À la fin de la simulation, un graphique apparaît montrant l'évolution du nombre de loups et de moutons en fonction du temps.
-Celui-ci est généré grâce à un script [python](https://github.com/Amine695/Game-of-Life-/blob/main/python/plot.py) en utilisant la bibliothèque *matplotlib*.
+Celui-ci est généré grâce à un script [python](https://github.com/Amine695/Game-of-Life-/blob/main/python/plot.py) en utilisant la bibliothèque *matplotlib*. <br/>
 **Ne fermer pas la fenêtre à la fin de la simulation !**, le plot met quelques secondes à s'afficher !
 
 ![Graph](plot/result.png)
